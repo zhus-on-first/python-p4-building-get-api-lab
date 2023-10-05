@@ -28,8 +28,8 @@ def bakeries():
 @app.route("/bakeries/<int:id>")
 def bakery_by_id(id):
     # bakery = Bakery.query.get(id)
-    session = db.session
-    bakery = session.get(Bakery, id)
+    # session = db.session
+    bakery = db.session.get(Bakery, id)
 
     if bakery is None:
         return make_response({"error": "Bakery not not found"}, 404)
